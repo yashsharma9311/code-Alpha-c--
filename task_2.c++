@@ -48,7 +48,7 @@ void loginUser(){
     cin>>passord;
 
     ifstream infile("users.txt");
-    while (file >> u >>p){
+    while (infile >> u >> p) {
         if(u== username && p == passord){
             found = true;
             break;
@@ -72,7 +72,7 @@ do{
     cin>>choice;
     switch(choice){
         case 1:
-          registrerUser();
+          registrationUser();
           break;
         case 2:
           loginUser();
