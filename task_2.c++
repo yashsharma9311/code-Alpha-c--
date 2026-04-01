@@ -16,6 +16,7 @@ bool userExists(string username){
 
 void registrationUser(){
     string username ,password;
+
     cout<<"\n--- Registration ---\n";
     cout<<"Enter username: ";
     cin>>username;
@@ -30,6 +31,7 @@ void registrationUser(){
 
     ofstream file("users.txt", ios::app);
     file<<username<<endl;
+    file<<password<<endl;
     file.close();
     cout<<"Registration successful! You can now log in.\n";
 }
@@ -46,7 +48,7 @@ void loginUser(){
     cin>>passord;
 
     ifstream infile("users.txt");
-    while (file>>u>>p){
+    while (file >> u >>p){
         if(u== username && p == passord){
             found = true;
             break;
